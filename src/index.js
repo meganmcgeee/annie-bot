@@ -123,8 +123,8 @@ bot.dialog(`/newYork/bk/healthcare`, [
     axios.get(`https://api.airtable.com/v0/app9xzJDMtX5XYjWJ/Health?api_key=keyNJRjM1plBmeRh4`)
       .then(get(`data.records`))
       .then(filter(record => record.fields.Borough === `Brooklyn`))
-      .then(map(directionMessage))
-      .then(forEach(msg => session.send(msg)));
+      .then(map(message))
+      .then(sendMessages(session));
   },
 ]);
 
@@ -134,8 +134,8 @@ bot.dialog(`/newYork/bk/shelter`, [
     axios.get(`https://api.airtable.com/v0/app9xzJDMtX5XYjWJ/Shelter?api_key=keyNJRjM1plBmeRh4`)
       .then(get(`data.records`))
       .then(filter(record => record.fields.Borough === `Brooklyn`))
-      .then(map(directionMessage))
-      .then(forEach(msg => session.send(msg)));
+      .then(map(message))
+      .then(sendMessages(session));
   },
 ]);
 
@@ -268,4 +268,16 @@ bot.dialog(`/chicago`, [
 
 function directionMessage({ fields: { Name: name, Directions: directions, Address: address, Borough: borough, Phone: phone, Services: services } }) {
   return `You can get to ${name} at ${address} by taking the ${directions} They can assist with ${services}. If you need more info, you can call ${phone}.`;
+}
+function detailsMessage({ fields: { Phone: phone, Services: services, Hours: hours } }) {
+  return `They are open ${hours} and can assist with ${services}. For more info, they can be reached at ${phone}.`;
+}
+
+function message(input) {
+  return [directionMessage(input), detailsMessage(input)];
+}
+
+function sendMessages(session) {
+  return msgs =>
+    msgs.forEach(forEach(msg => session.send(msg)));
 }
