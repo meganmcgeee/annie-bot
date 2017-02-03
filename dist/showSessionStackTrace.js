@@ -26,7 +26,7 @@ var _pluck2 = _interopRequireDefault(_pluck);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const showCallStack = (0, _pipe2.default)((0, _get2.default)('sessionState.callstack'), (0, _pluck2.default)('id'), (0, _join2.default)(', '), (0, _add2.default)('*** Call stack: '), console.log);
+const showCallStack = (0, _pipe2.default)((0, _get2.default)(`sessionState.callstack`), (0, _pluck2.default)(`id`), (0, _join2.default)(`, `), (0, _add2.default)(`*** Call stack: `), console.log);
 
 exports.default = {
   botbuilder(session, next) {

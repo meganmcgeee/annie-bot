@@ -24,12 +24,12 @@ gulp.task(`js`, done => {
     .pipe(sourcemaps.init())
     .pipe(babel(babelOptions))
     .pipe(sourcemaps.write(`.`))
-    .pipe(gulp.dest(`lib`))
+    .pipe(gulp.dest(`dist`))
     .on(`end`, done);
 });
 
 gulp.task(`default`, [`js`], () => {
   gulp.watch(`src/**/*.js`, [`js`]);
   // env({ file: '.env.json' });
-  nodemon({ script: `lib/index.js`, ignore: `src` });
+  nodemon({ script: `dist/index.js`, ignore: `src` });
 });

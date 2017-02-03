@@ -5,10 +5,10 @@ import pipe from 'lodash/fp/pipe';
 import pluck from 'lodash/fp/pluck';
 
 const showCallStack = pipe(
-  get('sessionState.callstack'),
-  pluck('id'),
-  join(', '),
-  add('*** Call stack: '),
+  get(`sessionState.callstack`),
+  pluck(`id`),
+  join(`, `),
+  add(`*** Call stack: `),
   console.log,
 );
 
