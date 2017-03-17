@@ -7,10 +7,8 @@ import map from 'lodash/fp/map';
 
 export default [
   session => {
-    axios.get(`https://api.airtable.com/v0/app9xzJDMtX5XYjWJ/Childcare?api_key=keyNJRjM1plBmeRh4`)
-      .then(get(`data.records`))
-      .then(filter(record => record.fields.Borough === `Brooklyn`))
-      .then(map(directionMessage))
+    axios.get(`https://data.ny.gov/resource/mn9z-iqan.json?city=Bronx&region_code=NYCDOH&program_type=GFDC&$limit=5`)
+      .then(get(`data`))
       .then(forEach(msg => session.send(msg)));
   },
 ];
