@@ -4,6 +4,10 @@ var _applyMiddleware = require('./applyMiddleware');
 
 var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
+var _atlanta = require('./dialogs/atlanta');
+
+var _atlanta2 = _interopRequireDefault(_atlanta);
+
 var _bot = require('./bot');
 
 var _bot2 = _interopRequireDefault(_bot);
@@ -39,10 +43,6 @@ var _brooklynHealthcare2 = _interopRequireDefault(_brooklynHealthcare);
 var _brooklynShelter = require('./dialogs/brooklynShelter');
 
 var _brooklynShelter2 = _interopRequireDefault(_brooklynShelter);
-
-var _chicago = require('./dialogs/chicago');
-
-var _chicago2 = _interopRequireDefault(_chicago);
 
 var _introduction = require('./dialogs/introduction');
 
@@ -80,5 +80,5 @@ _bot2.default.dialog(`/newYork/bk/childcare/afterschool`, _brooklynChildcareAfte
 _bot2.default.dialog(`/newYork/bx`, _bronx2.default).reloadAction(...reloadMenu);
 _bot2.default.dialog(`/newYork/bx/healthcare`, _bronxHealthcare2.default).reloadAction(...reloadMenu);
 _bot2.default.dialog(`/losAngeles`, _losAngeles2.default);
-_bot2.default.dialog(`/chicago`, _chicago2.default);
+_bot2.default.dialog(`/atlanta`, _atlanta2.default);
 //# sourceMappingURL=index.js.map

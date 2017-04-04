@@ -2,7 +2,7 @@ import builder from 'botbuilder';
 
 export default [
   session => {
-    builder.Prompts.choice(session, `What city are you in, love?`, `New York City|Los Angeles|Chicago`);
+    builder.Prompts.choice(session, `What city are you in, love?`, `New York City|Los Angeles|Atlanta`);
   },
   (session, results) => {
     switch (results.response.index) {
@@ -13,7 +13,7 @@ export default [
         session.beginDialog(`/losAngeles`);
         break;
       case 2:
-        session.beginDialog(`/chicago`);
+        session.beginDialog(`/atlanta`);
         break;
       default:
         session.endDialog();

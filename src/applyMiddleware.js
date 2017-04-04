@@ -2,7 +2,7 @@ import showSessionStackTrace from './showSessionStackTrace';
 
 const dumbassMiddleware = {
   botbuilder(session, next) {
-    session.send(`You're a dumbass.`);
+    session.send(`test`);
     next();
   },
 };

@@ -12,7 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const dumbassMiddleware = {
   botbuilder(session, next) {
-    session.send(`You're a dumbass.`);
+    session.send(`test`);
     next();
   }
 };
