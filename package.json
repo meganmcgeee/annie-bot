@@ -20,27 +20,27 @@
   "homepage": "https://github.com/MakeAppsIO/annie-bot#readme",
   "dependencies": {
     "axios": "^0.15.3",
-    "botbuilder": "^3.4.0",
+    "botbuilder": "^3.13.1",
     "lodash": "^4.17.2",
-    "restify": "^4.3.0"
+    "restify": "^4.3.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-eslint": "^7.1.1",
-    "babel-preset-env": "^1.1.4",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.22.0",
     "eslint": "^3.11.0",
     "eslint-config-airbnb-base": "^10.0.1",
     "eslint-config-makeapps": "latest",
     "eslint-plugin-better": "^0.1.5",
     "eslint-plugin-fp": "^2.2.0",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-lodash-fp": "^2.1.3",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-nodemon": "^2.2.1",
     "gulp-plumber": "^1.1.0",
-    "gulp-sourcemaps": "^2.4.0",
-    "nodemon": "^1.11.0"
+    "gulp-sourcemaps": "^2.6.1",
+    "nodemon": "^1.12.1"
   }
 }
